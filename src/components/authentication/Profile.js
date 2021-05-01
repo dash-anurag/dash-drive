@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 import { Alert, Button, Card } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
+import CenteredContainer from "../../utils/CenteredContainer";
 
 const Dashboard = () => {
   const [error, setError] = useState("");
@@ -21,7 +22,7 @@ const Dashboard = () => {
   };
 
   return (
-    <React.Fragment>
+    <CenteredContainer>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Profile</h2>
@@ -38,7 +39,7 @@ const Dashboard = () => {
           Logout
         </Button>
       </div>
-    </React.Fragment>
+    </CenteredContainer>
   );
 };
 

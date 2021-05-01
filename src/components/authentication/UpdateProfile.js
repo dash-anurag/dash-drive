@@ -1,8 +1,9 @@
 import React, { useRef, useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../../context/AuthContext";
-import { Link, useHistory } from "react-router-dom";
+import CenteredContainer from "../../utils/CenteredContainer";
 
 const UpdateProfile = () => {
   const emailRef = useRef();
@@ -36,7 +37,7 @@ const UpdateProfile = () => {
 
     Promise.all(promises)
       .then(() => {
-        history.push("/");
+        history.push("/user");
       })
       .catch(() => {
         setError("Failed to update account!");
@@ -47,7 +48,7 @@ const UpdateProfile = () => {
   };
 
   return (
-    <React.Fragment>
+    <CenteredContainer>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Update Profile</h2>
@@ -85,9 +86,9 @@ const UpdateProfile = () => {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        Already have an account? <Link to="/">Cancel</Link>
+        Already have an account? <Link to="/user">Cancel</Link>
       </div>
-    </React.Fragment>
+    </CenteredContainer>
   );
 };
 
