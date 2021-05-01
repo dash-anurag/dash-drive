@@ -7,6 +7,7 @@ import Login from "./components/authentication/Login";
 import Signup from "./components/authentication/Signup";
 import ForgotPassword from "./components/authentication/ForgotPassword";
 import UpdateProfile from "./components/authentication/UpdateProfile";
+import Dashboard from "./components/drive/Dashboard";
 
 import PrivateRoute from "./utils/PrivateRoute";
 
@@ -16,6 +17,7 @@ const App = () => {
       <AuthProvider>
         <Switch>
           {/* Drive */}
+          <PrivateRoute exact path="/" component={Dashboard} />
 
           {/* Profile */}
           <PrivateRoute path="/user" component={Profile} />
