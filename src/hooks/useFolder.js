@@ -74,7 +74,8 @@ const useFolder = (folderId = null, folder = null) => {
           payload: { folder: database.formatDoc(doc) },
         });
       })
-      .catch(() => {
+      .catch((e) => {
+        console.log(e);
         dispatch({
           type: ACTIONS.UPDATE_FOLDER,
           payload: { folder: ROOT_FOLDER },
