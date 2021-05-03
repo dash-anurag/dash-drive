@@ -42,7 +42,11 @@ const AddFolderButton = ({ currentFolder }) => {
       <Button onClick={openModal} variant="outline-success" size="sm">
         <FontAwesomeIcon icon={faFolderPlus} />
       </Button>
-      <Modal show={open} onHide={closeModal}>
+      <Modal
+        show={open}
+        onHide={closeModal}
+        //  animation={false} //TODO: Animation is triggering an error
+      >
         <Form onSubmit={handleSubmit}>
           <Modal.Body>
             <Form.Group>

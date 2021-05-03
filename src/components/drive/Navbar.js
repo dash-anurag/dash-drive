@@ -7,7 +7,7 @@ const NavbarComponent = () => {
   return (
     <Navbar bg="light" expand="sm">
       <Navbar.Brand as={Link} to="/">
-        Free Drive
+        Dash Drive
       </Navbar.Brand>
       <Nav>
         <Nav.Link as={Link} to="/user">
